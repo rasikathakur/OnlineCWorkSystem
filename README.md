@@ -106,24 +106,6 @@ Students can:
 
 ---
 
-## Contributing
-We welcome contributions! To contribute:
-1. Fork the repository.
-2. Create a feature branch:
-   ```bash
-   git checkout -b feature/YourFeature
-   ```
-3. Commit your changes:
-   ```bash
-   git commit -m "Add your message here"
-   ```
-4. Push to the branch:
-   ```bash
-   git push origin feature/YourFeature
-   ```
-5. Submit a pull request.
-
----
 
 ## Contact
 For any queries, feel free to reach out:

@@ -80,7 +80,7 @@ Students can:
    ```
 6. Open your browser and navigate to:
    ```
-   http://localhost:3000
+   http://localhost:5500
    ```
 
 ---

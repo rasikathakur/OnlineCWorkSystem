@@ -62,11 +62,11 @@ Students can:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/YourUsername/OnlineClassworkSystem.git
+   git clone https://github.com/rasikathakur/OnlineCWorkSystem.git
    ```
 2. Navigate to the project directory:
    ```bash
-   cd OnlineClassworkSystem
+   cd OnlineCWorkSystem
    ```
 3. Install dependencies:
    ```bash

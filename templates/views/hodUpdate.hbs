@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://kit.fontawesome.com/48bcbf2c30.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student</title>
+    <link rel="stylesheet" href="/css/granted_cws.css">
+    <script type="text/javascript">
+      function disableBack() { window.history.forward(); }
+      setTimeout("disableBack()", 0);
+      window.onunload = function () { null };
+      </script>
+</head>
+<body>
+    <header>
+        <nav role="navigation">
+            <div id="menuToggle">
+              <input type="checkbox" />
+              <span></span>
+              <span></span>
+              <span></span>
+              <ul id="menu">
+                <hr/>
+                <a href="/stud"><li>Student</li></a>
+                <hr/>
+                <a href="/cc"><li>Class Coordinator</li></a>
+                <hr/>
+                <a href="/hod1"><li>Head Of Department</li></a>
+                <hr/>
+              </ul>
+            </div>
+          </nav>
+        <div class="info-header">
+            K.K. Wagh Institute of Engineering Education & Research (Autonomous) 
+            <br>
+            <p>Hirabai Haridas Vidyanagri, Amrutdham, Panchavati, Nashik</p>
+        </div>
+    </header>
+    <h1 class="blue-heading">Stud Update Data</h1>
+    
+    <section class="profile-section" id="studData">
+    <table>
+        <form action="/hodUpdate1/{{hodOneData.crn}}" method="post">
+      <tbody>
+        
+        <tr>
+            <td id="b">Profile:</td>
+            <td><img src="{{getProfilePhotoUrl hodOneData.profilephoto}}" alt="svg/user.svg" width="150px" height="150px"/></td>
+        </tr>
+        <tr>    
+            <td id="b">CRN:</td>
+            <td>CRN: {{hodOneData.crn}}</td>
+        </tr>
+        <tr>
+            <td id="b">Name:</td>
+            <td><input name="name" type="text" value="{{hodOneData.name}}"/></td>
+        </tr>
+        <tr>
+            <td id="b">Department:</td>
+            <td><input name="department" type="text" value="{{hodOneData.department}}"/></td>
+        </tr>
+        <tr>
+            <td id="b">Mobile:</td>
+            <td><input name="mobile" type="number" value="{{hodOneData.mobile}}"/></td>
+        </tr>
+        <tr>
+            <td id="b">Email:</td>
+            <td><input name="email" type="text" value="{{hodOneData.email}}"/></td>
+        </tr>
+        
+        <tr>
+        <td>
+            
+             <button type="submit" id="up">Update</button>
+            
+        </td>
+    </tr>
+      </tbody>
+    </form>  
+    </table>
+        </section>
+</body>
+</html>

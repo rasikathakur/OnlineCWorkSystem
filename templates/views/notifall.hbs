@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notification Center</title>
+    <link rel="stylesheet" href="/css/notif.css" />
+  </head>
+  <body>
+    <header>
+        <div class="info-header">
+            K.K. Wagh Institute of Engineering Education & Research (Autonomous)
+            <br>
+            <p>Hirabai Haridas Vidyanagri, Amrutdham, Panchavati, Nashik</p>
+        </div>
+
+    </header>
+    
+    
+    <div class="container">
+        <h1 class="heading">Notification Center</h1>
+        {{#each cwreq}}
+        <form action="/notif/{{this.srno}}" method="get">
+        <div class="notification">
+          <p id="step_content1" class="notification-text">Reason: {{this.reason}}</p>
+          <p id="step_content2" class="notification-details">
+            From: {{this.dateofdeparture}} To: {{this.dateofreturn}}
+            <button type="submit" class="view-button">VIEW</button>
+          </p>
+          
+        </div>
+    </form>
+        {{/each}}
+    </div>
+    
+</body>
+</html>

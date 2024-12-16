@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notification Center</title>
+    <link rel="stylesheet" href="\css\notif.css" />
+	<style>
+	
+body, html {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+header {
+    background-color: #00008B;
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+
+.info-header {
+    background-color: #92dbff;
+    border-radius: 50px 50px 50px 50px;
+    display: inline-block;
+    padding: 10px;
+    margin-top: 10px;
+    width: 1376px;
+    height: 50px;
+    font-weight: bolder;
+    font-size: larger;
+    color: #0a4983;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-shadow: 10px 10px #0a4983;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.info-header p{
+    font-weight: bold;
+    font-size: small;
+    color: #1061ac;
+    margin-top: 1px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 10px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    justify-content:start;
+    align-items:center;
+    flex-direction: column;
+}
+
+ul {
+    display: flex;
+}
+
+ul li {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 40px;
+}
+
+ul li .icons {
+    font-size: 25px;
+    color: #1b761b;
+    margin: 0 60px;
+}
+
+ul li .label {
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #1b761b;
+}
+
+ul li .redtbr{
+    background-color: red;
+}
+ul li .greentbr{
+    background-color: green;
+}
+ul li .yellowbtr{
+    background-color: rgb(233, 169, 8);
+}
+
+ul li .step {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: #d7d7c3;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 50px;
+    display: grid;
+    place-items: center;
+    color: ghostwhite;
+    position: relative;
+    cursor: pointer;
+}
+
+.step::after {
+    content: "";
+    position: absolute;
+    width: 187px;
+    height: 3px;
+    background-color: #d7d7c3;
+    right: 30px;
+}
+
+.first::after {
+    width: 0;
+    height: 0;
+}
+
+ul li .step .awesome {
+    display: none;
+}
+
+ul li .step p {
+    font-size: 18px;
+}
+
+ul li .active {
+    background-color: #1b761b;
+}
+
+li .active::after {
+    background-color: #1b761b;
+
+}
+
+ul li .active p {
+    display: none;
+}
+
+ul li .active .awesome {
+    display: flex;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.notification {
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 3px;
+    background-color: #eee;
+}
+
+.notification-text {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.notification-details {
+    font-size: 12px;
+    color: #888;
+}
+
+.clear-all-button {
+    background-color: #0d6efd;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    bottom: 10px;
+    width: 100%;
+    
+}
+
+
+	</style>
+  </head>
+  <body>
+    <header>
+        <div class="info-header">
+            K.K. Wagh Institute of Engineering Education & Research (Autonomous)
+            <br>
+            <p>Hirabai Haridas Vidyanagri, Amrutdham, Panchavati, Nashik</p>
+        </div>
+        
+    </header>
+    <div class="main">
+
+        <ul>
+            <li>
+                <div id="step_first" class="step first">
+                    <p>1</p>
+                    <i class="awesome fa-solid fa-check"></i>
+                </div>
+                <p class="label">To be Reviewed</p>
+            </li>
+            <li>
+               
+                <div id="step_second" class="step second">
+                    <p>2</p>
+                    <i class="awesome fa-solid fa-check"></i>
+                </div>
+                <p class="label">Reviewed By CC</p>
+            </li>
+            <li>
+               
+                <div id="step_third" class="step third">
+                    <p>3</p>
+                    <i class="awesome fa-solid fa-check"></i>
+                </div>
+                <p class="label">Reviewed By HOD</p>
+            </li>
+            <li>
+                
+                <div id="step_fourth" class="step fourth">
+                    <p>4</p>
+                    <i class="awesome fa-solid fa-check"></i>
+                </div>
+                <p class="label">Reviewed By Dean</p>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <h1 class="heading">Notification Center</h1>
+        <div class="notification">
+          <p id="step_content1" class="notification-text">Your request has been declined!</p>
+          <p id="step_content2" class="notification-details">
+            Denied by Class Coordinator: John Doe on 01/01/2000 at 12:00 PM
+          </p>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+            var reviewedByCC = 'accepted';
+            var reviewedByHod = 'accepted';
+            var reviewedByDean = 'pending';
+            const date1 = new Date('2024-06-05T00:00:00.000+00:00');
+            const formattedDate1 = date1.toLocaleDateString('en-GB');
+            const date2 = new Date('2024-06-05T00:00:00.000+00:00');
+            const formattedDate2 = date2.toLocaleDateString('en-GB');
+
+            var step1 = document.getElementById('step_first');
+            var step2 = document.getElementById('step_second');
+            var step3 = document.getElementById('step_third');
+            var step4 = document.getElementById('step_fourth');
+            var content1 = document.getElementById('step_content1');
+            var content2 = document.getElementById('step_content2');
+            if(reviewedByCC == 'pending' && reviewedByHod == 'pending' && reviewedByDean == 'pending'){
+                step1.style["background-color"]="#E9A908";
+                step2.style["background-color"]="#d7d7c3";
+                step3.style["background-color"]="#d7d7c3";
+                step4.style["background-color"]="#d7d7c3";
+                content1.innerHTML = "Your Request is under Review...";
+                content2.innerHTML = " From: " + formattedDate1 + " To: " + formattedDate2;
+            }
+            else if(reviewedByCC == 'accepted' && reviewedByHod == 'pending' && reviewedByDean == 'pending'){
+                step1.style["background-color"]="green";
+                step2.style["background-color"]="green";
+                step3.style["background-color"]="#d7d7c3";
+                step4.style["background-color"]="#d7d7c3";
+                content1.innerHTML = "Your Request is accepted By CC";
+                content2.innerHTML = " From: " + formattedDate1 + " To: " + formattedDate2;
+            }
+            else if(reviewedByCC == 'accepted' && reviewedByHod == 'accepted' && reviewedByDean == 'pending'){
+                step1.style["background-color"]="green";
+                step2.style["background-color"]="green";
+                step3.style["background-color"]="green";
+                step4.style["background-color"]="#d7d7c3";
+                content1.innerHTML = "Your Request is accepted By HOD";
+                content2.innerHTML = " From: " + formattedDate1 + " To: " + formattedDate2;
+            }
+            else if(reviewedByCC == 'accepted' && reviewedByHod == 'accepted' && reviewedByDean == 'accepted'){
+                step1.style["background-color"]="green";
+                step2.style["background-color"]="green";
+                step3.style["background-color"]="green";
+                step4.style["background-color"]="green";
+                content1.innerHTML = "Congratulations your class work request has been accepted!!";
+                content2.innerHTML = " From: " + formattedDate1 + " To: " + formattedDate2;
+            }
+            else if(reviewedByCC == 'rejected' && reviewedByHod == 'pending' && reviewedByDean == 'pending'){
+                step1.style["background-color"]="red";
+                step2.style["background-color"]="red";
+                step3.style["background-color"]="#d7d7c3";
+                step4.style["background-color"]="#d7d7c3";
+                content1.innerHTML = "Your Request is declined By CC";
+                content2.innerHTML = " From: " + formattedDate1 + " To: " + formattedDate2;
+            }
+            else if(reviewedByCC == 'accepted' && reviewedByHod == 'rejected' && reviewedByDean == 'pending'){
+                step1.style["background-color"]="red";
+                step2.style["background-color"]="red";
+                step3.style["background-color"]="red";
+                step4.style["background-color"]="#d7d7c3";
+                content1.innerHTML = "Your Request is declined By HOD";
+                content2.innerHTML = " From: " + formattedDate1 + " To: " + formattedDate2;
+            }
+            else if(reviewedByCC == 'accepted' && reviewedByHod == 'accepted' && reviewedByDean == 'rejected'){
+                step1.style["background-color"]="red";
+                step2.style["background-color"]="red";
+                step3.style["background-color"]="red";
+                step4.style["background-color"]="red";
+                content1.innerHTML = "Your Request is declined By Dean";
+                content2.innerHTML = " From: " + formattedDate1 + " To: " + formattedDate2;
+            }
+
+        </script>
+</html>
+
+
+  

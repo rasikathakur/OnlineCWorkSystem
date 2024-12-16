@@ -1,0 +1,434 @@
+html{
+	font-size: 100%;
+}
+body, html {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+header {
+    background-color: #00008B;
+    padding: 10px;
+    text-align:center;
+    color: white;
+}
+
+.info-header {
+    background-color: #92dbff; 
+    border-radius: 50px 50px 50px 50px;
+    display: inline-block;
+    padding: 10px;
+    margin-top: 10px;
+    width: 97%;
+    height: 50px;
+    font-weight: bolder;
+    font-size: 1.0rem;
+    color: #0a4983;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-shadow: 10px 10px #0a4983;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+
+.info-header a i{
+    color: #00008B;
+    position: relative;
+    margin-left: 150px;
+    font-size: 1.2rem;
+}
+
+.info-header p{
+    font-weight: bold;
+    font-size: 0.84rem;
+    color: #1061ac;
+    margin-top: 1px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.profile-section {
+            margin: 20px;
+            background-color: white;
+            border: 1px solid black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        a{
+            text-decoration: none;
+        }
+        a span{
+            border: 2px solid #ffffff;
+            color: #ffffff;
+            background-color: #0a4983;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            position: absolute;
+            margin-left: 230px;
+            padding: 10px;
+            width: 20px;
+            height:20px;
+            text-align: center;
+        }
+
+        a span:hover{
+            border: 3px solid rgb(198, 198, 198);
+            color: #ffffff;
+            background-color: #0b2b48;
+        }
+        span form button{
+            position: absolute; 
+            width: 40px; 
+            height: 40px; 
+            border-radius: 50%; 
+            background-image: url('/svg/bell.png'); 
+            background-size: cover; 
+            background-position: center; 
+            margin-left: 620px; 
+            margin-top: -18px;
+            border: #ffffff;
+        }
+        span form button:hover{
+            opacity: 0.8;
+            width: 45px;
+            height: 45px;
+        }
+        .profile-image {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+            background-color: #dddddd;
+            border: 2px solid black;
+        }
+
+        .profile-info p {
+            margin: 5px 0;
+            background-color: #e6ffe6; /* Light green background */
+            padding: 10px;
+			font-weight: bolder;
+            border-radius: 5px;
+        }
+
+        .profile-info p span{
+            margin: 5px 0;
+            background-color: #e6ffe6; /* Light green background */
+            padding: 10px;
+			font-weight:normal;
+            border-radius: 5px;
+        }
+
+        .details-container {
+            border-top: 2px solid green;
+            padding-top: 10px;
+        }
+
+        .details-block {
+            margin-bottom: 20px;
+        }
+
+        .details-block h3 {
+            background-color: #e6ffe6; /* Light green background */
+            color: rgb(1, 48, 19);
+            padding-left: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .details-block p {
+            padding-left: 10px;
+            font-weight: bolder;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 5px 0;
+        }
+        .details-block p span{
+            margin: 5px 0;
+            padding: 10px;
+			font-weight:normal;
+            border-radius: 5px;
+        }
+
+        .apply-container {
+            margin-bottom: 20px;
+        }
+
+        .apply-container button {
+            background-color: #FFA500;
+            border: none;
+            padding: 10px 25px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+            color: white;
+            font-size: 1.14rem;
+            font-weight: bolder;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            align-items: center;
+            margin-left: 50%;
+         }
+
+        .apply-container p {
+            padding-left: 10px;
+            margin: 5px 0;
+            text-align: center;
+        } 
+
+        a:hover span.tooltip {
+            visibility: visible;
+        }
+        
+        a span.tooltip {
+            visibility: hidden;
+            width: 120px;
+            background-color: #0b2b48; /* Default background color */
+            color: #fff; /* Default text color */
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            top: -30px; /* Adjust the position of the tooltip */
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        a span.tooltip::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #0b2b48 transparent transparent transparent;
+        }
+        
+        a:hover span.tooltip {
+            background-color: #ff0000; /* Change background color on hover */
+            color: #000; /* Change text color on hover */
+        }
+
+
+        #menuToggle
+        {
+          display: block;
+          position: absolute;
+          top: 50px;
+          left: 100px;
+          
+          z-index: 1;
+          
+          -webkit-user-select: none;
+          user-select: none;
+        }
+        
+        #menuToggle a
+        {
+          text-decoration: none;
+          color: #0a4983;
+          font-weight: bolder;
+          transition: color 0.3s ease;
+        }
+        hr{
+            color: #00008B;
+            background-color: #00008B;
+        }
+        #menuToggle a:hover
+        {
+          color: rgb(11, 113, 247);
+        }
+        
+        
+        #menuToggle input
+        {
+          display: block;
+          width: 40px;
+          height: 32px;
+          position: absolute;
+          top: -7px;
+          left: -5px;
+          
+          cursor: pointer;
+          
+          opacity: 0; /* hide this */
+          z-index: 2; /* and place it over the hamburger */
+          
+          -webkit-touch-callout: none;
+        }
+        
+        /*
+         * Just a quick hamburger
+         */
+        #menuToggle span
+        {
+          display: block;
+          width: 33px;
+          height: 4px;
+          margin-bottom: 5px;
+          position: relative;
+          
+          background: #00008B;
+          border-radius: 3px;
+          
+          z-index: 1;
+          
+          transform-origin: 4px 0px;
+          
+          transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+          background: 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+          opacity: 0.55s ease;
+        }
+        
+        #menuToggle span:first-child
+        {
+          transform-origin: 0% 0%;
+        }
+        
+        #menuToggle span:nth-last-child(2)
+        {
+          transform-origin: 0% 100%;
+        }
+        
+        /* 
+         * Transform all the slices of hamburger
+         * into a crossmark.
+         */
+        #menuToggle input:checked ~ span
+        {
+          opacity: 1;
+          transform: rotate(45deg) translate(-2px, -1px);
+          background: #0a4983;
+        }
+        
+        /*
+         * But let's hide the middle one.
+         */
+        #menuToggle input:checked ~ span:nth-last-child(3)
+        {
+          opacity: 0;
+          transform: rotate(0deg) scale(0.2, 0.2);
+        }
+        
+        /*
+         * Ohyeah and the last one should go the other direction
+         */
+        #menuToggle input:checked ~ span:nth-last-child(2)
+        {
+          transform: rotate(-45deg) translate(0, -1px);
+        }
+        
+        /*
+         * Make this absolute positioned
+         * at the top left of the screen
+         */
+        #menu
+        {
+          position: absolute;
+          width: 150px;
+          margin: -100px 0 0 -100px;
+          padding: 50px;
+          padding-bottom: 700px;
+          padding-top: 125px;
+          
+          background: #92dbff; 
+          list-style-type: none;
+          -webkit-font-smoothing: antialiased;
+          /* to stop flickering of text in safari */
+          
+          transform-origin: 0% 0%;
+          transform: translate(-100%, 0);
+          
+          transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+        }
+        
+        #menu li
+        {
+          padding: 10px 0;
+          font-size: 22px;
+        }
+        
+        /*
+         * And let's slide it in from the left
+         */
+        #menuToggle input:checked ~ ul
+        {
+          transform: none;
+        }
+
+        .blue-heading {
+            color: #0056b3; /* Deep blue color */
+            font-family: Georgia, serif;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 36px; /* Adjust size as needed */
+            background-color: #e1f5fe; /* Light blue background for contrast */
+            margin: 20px 0; /* Add some space around the heading */
+            border-radius: 8px; /* Optional: Adds rounded corners */
+			font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: Adds a subtle shadow */
+}
+
+
+.blue-heading1 {
+    color: #0056b3; /* Deep blue color */
+    font-family: Georgia, serif;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 16px; /* Adjust size as needed */
+    background-color: #e1f5fe; /* Light blue background for contrast */
+    margin: 20px 0; /* Add some space around the heading */
+    border-radius: 8px; /* Optional: Adds rounded corners */
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: Adds a subtle shadow */
+}
+
+.blue-heading2 {
+    color: #0056b3; /* Deep blue color */
+    font-family: Georgia, serif;
+    text-align: center;
+    align-items: center;
+    padding: 20px 0;
+    font-size: 60px; /* Adjust size as needed */
+    background-color: #e1f5fe; /* Light blue background for contrast */
+    margin: 20px 0; /* Add some space around the heading */
+    border-radius: 8px; /* Optional: Adds rounded corners */
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: Adds a subtle shadow */
+}
+
+@media(max-width: 480px) {
+    html {
+        font-size: 55%; /* 1rem = 7px */
+    }
+}
+@media(min-width: 481px) and (max-width: 768px) {
+    html {
+        font-size: 75%; /* 1rem = 7px */
+    }
+}
+@media(min-width: 769px) and (max-width: 1024px) {
+    html {
+        font-size: 85%; /* 1rem = 7px */
+    }
+}
+@media(min-width: 1025px) and (max-width: 1200px) {
+    html {
+        font-size: 95%; /* 1rem = 7px */
+    }
+}
+@media(min-width: 1201px) {
+    html {
+        font-size: 100%; /* 1rem = 7px */
+    }
+}
+

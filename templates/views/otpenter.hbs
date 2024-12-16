@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <script type="text/javascript">
+      function disableBack() { window.history.forward(); }
+      setTimeout("disableBack()", 0);
+      window.onunload = function () { null };
+      </script>
+      <script type="text/javascript">
+        function Timer() {
+            var counter = 300; // 5 minutes in seconds
+            var myTimer = setInterval(function() {
+                var minutes = Math.floor(counter / 60);
+                var seconds = counter % 60;
+                
+                // Format the minutes and seconds to be two digits
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+                document.getElementById("testTimer").style.color = "green";
+                document.getElementById("testTimer").innerHTML = minutes + ":" + seconds;
+                counter--;
+                
+                if (counter < 0) {
+                    clearInterval(myTimer);
+                    document.getElementById("testTimer").style.color = "red";
+                    
+                    // Perform an action when the time is up, e.g., submit the form
+                    document.getElementById("testTimer").innerHTML = "OTP Expired";
+                    setTimeout(function() {
+                      window.location.href = "/";
+                  }, 2000);
+                }
+            }, 1000);
+        }
+        Timer();
+    </script>
+  </head>
+  <body>
+<div class="bg-light py-3 py-md-5">
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-12 col-md-11 col-lg-8 col-xl-7 col-xxl-6">
+          <div class="bg-white p-4 p-md-5 rounded shadow-sm">
+            <div class="row gy-3 mb-5">
+              <div class="col-12">
+                <div class="text-center">
+                  <a href="#!">
+                    <img src="svg\lock.svg" alt="BootstrapBrain Logo" width="175" height="57">
+                  </a>
+                </div>
+              </div>
+              <div class="col-12">
+                <h2 class="fs-6 fw-normal text-center text-secondary m-0 px-md-5">Enter the OTP you recieved on your provided Email ID <br/> OTP is valid for <span id = "testTimer"></span></h2>
+              </div>
+            </div>
+            <form action="/verifyOtp" method="post">
+              <div class="row gy-3 gy-md-4 overflow-hidden">
+                <div class="col-12">
+                    <label for="email" class="form-label">OTP <span class="text-danger">*</span></label>
+                    <div class="input-group">
+                      <span class="input-group-text">
+                       
+                      </span>
+                      <input type="hidden" class="form-control" name="email" value="{{oemail}}" id="email" required>
+                      <input type="hidden" class="form-control" name="usert" value="{{userType}}" id="email" required>
+                      <input type="number" class="form-control" name="otp" id="email" required>
+                    </div>
+                  </div>
+                <div class="col-12">
+                  <div class="d-grid">
+                    <button class="btn btn-primary btn-lg" type="submit">Reset Password</button>
+                    
+                </div>
+                </div>
+              </div>
+            </form>
+            <div class="row">
+              <div class="col-12">
+                <hr class="mt-5 mb-4 border-secondary-subtle">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>

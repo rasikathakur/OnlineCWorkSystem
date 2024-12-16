@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://kit.fontawesome.com/48bcbf2c30.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student</title>
+    <link rel="stylesheet" href="/css/granted_cws.css">
+    <script type="text/javascript">
+        function disableBack() { window.history.forward(); }
+        setTimeout("disableBack()", 0);
+        window.onunload = function () { null };
+        </script>
+</head>
+<body>
+    <header>
+        <nav role="navigation">
+            <div id="menuToggle">
+              <input type="checkbox" />
+              <span></span>
+              <span></span>
+              <span></span>
+              <ul id="menu">
+                <hr/>
+                <a href="/stud"><li>Student</li></a>
+                <hr/>
+                <a href="/cc"><li>Class Coordinator</li></a>
+                <hr/>
+                <a href="/hod1"><li>Head Of Department</li></a>
+                <hr/>
+              </ul>
+            </div>
+          </nav>
+        <div class="info-header">
+            K.K. Wagh Institute of Engineering Education & Research (Autonomous) 
+            <br>
+            <p>Hirabai Haridas Vidyanagri, Amrutdham, Panchavati, Nashik</p>
+        </div>
+    </header>
+    <h1 class="blue-heading">Stud View Data</h1>
+    
+    <section class="profile-section" id="studData">
+    <table>
+      <tbody>
+        <tr>
+            <td id="b">Profile:</td>
+            <td><img src="{{getProfilePhotoUrl studOneData.profilephoto}}" alt="svg/user.svg" width="150px" height="150px"/></td>
+            <td id="b">CRN:</td>
+            <td>{{studOneData.crn}}</td>
+        </tr>
+        <tr>
+            <td id="b">Roll No:</td>
+            <td>{{studOneData.Roll}}</td>
+            <td id="b">Name:</td>
+            <td>{{studOneData.name}}</td>
+        </tr>
+        <tr>
+            <td id="b">Department:</td>
+            <td>{{studOneData.Department}}</td>
+            <td id="b">Class Co-ordinator:</td>
+            <td>{{studOneData.CurrentCC}}</td>
+        </tr>
+        <tr>
+            <td id="b">Class:</td>
+            <td>{{studOneData.class}}</td>
+            <td id="b">Div:</td>
+            <td>{{studOneData.div}}</td>
+        </tr>
+        <tr>
+            <td id="b">Mobile:</td>
+            <td>{{studOneData.mobile}}</td>
+            <td id="b">Email:</td>
+            <td>{{studOneData.email}}</td>
+        </tr>
+        <tr>
+            <td id="b">Address:</td>
+            <td>{{studOneData.Address}}</td>
+            <td id="b">Net Attendance:</td>
+            <td>{{studOneData.NetAttendace}}</td>
+        </tr>
+        <tr>
+            <td id="b">Theory Attendance:</td>
+            <td>{{studOneData.ThAttendance}}</td>
+            <td id="b">Practical Attendance:</td>
+            <td>{{studOneData.PrAttendance}}</td>
+        </tr>
+        <tr>
+            <td id="b">HOD</td>
+            <td>{{studOneData.CurrentHod}}</td>
+            <td id="b">Dean</td>
+            <td>{{studOneData.CurrentDean}}</td>
+        </tr>
+        <tr>
+            <td id="b">Admission Year</td>
+            <td>{{studOneData.AdmissionYear}}</td>
+        </tr>
+        
+      </tbody>
+      
+    </table>
+        </section>
+    
+
+</body>
+</html>

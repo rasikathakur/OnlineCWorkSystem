@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K. K. Wagh Institute</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body, html {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+header {
+    background-color: #00008B;
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+
+.info-header {
+    background-color: #d3d3d3;
+    border-radius: 50px 50px 50px 50px;
+    display: inline-block;
+    padding: 10px;
+    margin-top: 10px;
+    width: 1376px;
+    height: 50px;
+    font-weight: bolder;
+    font-size: larger;
+    color: #000000;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-shadow: 10px 10px #625f5f;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.info-header p{
+    font-weight: bold;
+    font-size: medium;
+    color: #282828;
+    margin-top: 1px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.profile-section {
+            margin: 20px;
+            background-color: white;
+            border: 1px solid black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-image {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+            background-color: #dddddd;
+        }
+
+        .profile-info p {
+            margin: 5px 0;
+            background-color: #e6ffe6; /* Light green background */
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .details-container {
+            border-top: 2px solid green;
+            padding-top: 10px;
+        }
+
+        .details-block {
+            margin-bottom: 20px;
+        }
+
+        .details-block h3 {
+            background-color: green;
+            color: white;
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .details-block p {
+            padding-left: 10px;
+            font-weight: normal;
+            background-color: #e6ffe6; /* Light green background */
+            padding: 10px;
+            border-radius: 5px;
+            margin: 5px 0;
+        }
+
+        .apply-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .apply-container button {
+            background-color: #FFA500;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .apply-container p {
+            padding-left: 10px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="info-header">
+            K.K. Wagh Institute of Engineering Education & Research (Autonomous)
+            <br>
+            <p>Hirabai Haridas Vidyanagri, Amrutdham, Panchavati, Nashik</p>
+        </div>
+    </header>
+    <section class="profile-section">
+        <div class="profile-container">
+            <img src="profile-placeholder.png" alt="Profile Image" class="profile-image">
+            <div class="profile-info">
+                <p>NAME :<span>XXXX XXXX XXXX</span></p>
+                <p>Permanent Address :<span> XXXXX XXXXX XXXXX XXXXX XXXXX</span></p>
+                <p>Mobile No. :<span>XXXX-XXX-XXX</span></p>
+            </div>
+        </div>
+        <div class="details-container">
+            <div class="details-block">
+                <h3>Personal Details:</h3>
+                <p>CRN: <span>XXXXXXXXX</span></p>
+                <p>Course Year:<span> XX</span></p>
+                <p>Section: <span>XXXX-XXXX<span></p>
+                <p>Roll No. :<span>XX</span></p>
+                <p>Admission year: <span>XXXX</span></p>
+                <p>Current CC: <span>John Doe</span></p>
+            </div>
+            <div class="details-block">
+                <h3>Current Eligibility details :</h3>
+                <p>Attendance (In percentage) : <span>XX.XX%</span></p>
+                <p>Theory Lecture Attendance : <span>XX.XX %</span></p>
+                <p>Practical Lecture Attendance : <span>XX.XX %</span></p>
+            </div>
+            <div class="apply-container">
+                <p>Apply for Classwork / Leave :</p>
+                <button>Apply</button>
+                <p class="tip">TIP: By clicking the button you will be redirected to the page to apply for leave to be reviewed and forwarded to related authorities</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

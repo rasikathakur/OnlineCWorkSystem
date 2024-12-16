@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://kit.fontawesome.com/48bcbf2c30.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student</title>
+    <link rel="stylesheet" href="/css/granted_cws.css">
+    <script>
+  
+      function validateFile(input) {
+        var fileName = input.value;
+        var idxDot = fileName.lastIndexOf('.') + 1;
+        var extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
+        if (extFile == 'csv') {
+          
+        }else{
+          alert('Only csv files are allowed!');
+           // Clear the file input
+        }
+      }
+    </script>
+    <script type="text/javascript">
+      function disableBack() { window.history.forward(); }
+      setTimeout("disableBack()", 0);
+      window.onunload = function () { null };
+      </script>
+    <script type="text/javascript">
+   
+        function toggle(crn){
+        var blur = document.getElementById('blur');
+        blur.classList.toggle('active');
+        var popup = document.getElementById('popup');
+        popup.classList.toggle('active');
+        var delcontent = document.getElementById("delcontent");
+        delcontent.innerHTML = "Are you sure you want to permanently delete this user with CRN: "+crn+"?";
+        var deleteForm = document.getElementById('deleteForm');
+        deleteForm.action = "/hodDelete/" + crn;
+          }
+ </script>
+</head>
+<body>
+    <header>
+      <nav role="navigation">
+        <div id="menuToggle">
+          <input type="checkbox" />
+          <span></span>
+          <span></span>
+          <span></span>
+          <ul id="menu">
+            <hr/>
+            <a href="/stud"><li>Student</li></a>
+            <hr/>
+            <a href="/cc"><li>Class Coordinator</li></a>
+            <hr/>
+            <a href="/hod1"><li>Head Of Department</li></a>
+            <hr/>
+          </ul>
+        </div>
+      </nav>
+        <div class="info-header">
+            K.K. Wagh Institute of Engineering Education & Research (Autonomous) 
+            <br>
+            <p>Hirabai Haridas Vidyanagri, Amrutdham, Panchavati, Nashik</p>
+        </div>
+    </header>
+    
+    <h1 class="blue-heading1"><form action="/hodadd" method="get"><button id="ad" type="submit">Add Student</button></form><form action="/hodcsv" method="post" enctype="multipart/form-data"><input type="file" id="csvv" name="csvv" onchange="validateFile(this)" accept=".csv" required/><button id="csv" type="submit">Add CSV</button></form>
+      <form action="/singlehod" method="get">
+        <button id="download" type="submit">Download Format</button>
+      </form>
+    </h1>
+    
+    <section class="profile-section" id="studData">
+    <table>
+      <thead>
+        <div class="container" id="blur">
+        <th>Profile</th>
+        <th>CRN</th>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Mobile</th>
+        <th>Email</th>
+        <th>Actions</th>
+      </thead>
+      <tbody>
+        {{#each hodRequests}}
+        <tr>
+            <td><img src="{{getProfilePhotoUrl this.profilephoto}}" alt="/svg/user.svg" id="studImg" width="150px" height="150px"/></td>
+            <td>{{this.crn}}</td>
+            <td>{{this.name}}</td>
+            <td>{{this.department}}</td>
+            <td>{{this.mobile}}</td>
+            <td>{{this.email}}</td>
+            <td>
+                <div class="act">
+                <form method="post" action="/hodView/{{this.crn}}">
+                    <button id="view"><img src="/svg/eye2.svg" alt="/svg/user.svg" id="view1" width="30px" height="30px"/></button>
+                </form>
+                <form method="post" action="/hodUpdate/{{this.crn}}">
+                    <button id="edit"><img src="/svg/edit2.svg" alt="/svg/user.svg" id="edit1" width="30px" height="30px"/></button>
+                </form>
+                <form method="post">
+                    <button id="delete" onclick="toggle({{this.crn}})" type="button"><img src="/svg/delete2.svg" alt="/svg/user.svg" id="delete1" width="30px" height="30px"/></button>
+                </form>
+                       
+            </div>
+        </div>
+
+        </td>
+        </tr>
+        <div id="popup">
+          <form method="post" id="deleteForm">
+            <h1 id="delcontent"></h1>
+            <button onclick="toggle({{this.crn}})" id="can" type="button">Cancel</button>
+            <button type="submit" id="del">Delete</button>
+            </form>
+          </div>     
+        {{/each}}
+        
+      </tbody>
+      
+    </table>
+        </section>
+    
+    
+</body>
+</html>
